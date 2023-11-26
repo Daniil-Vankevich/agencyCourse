@@ -11,18 +11,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="">
 
-  <!-- Google Fonts -->
-  <link href='http://fonts.googleapis.com/css?family=Montserrat:300,400%7COpen+Sans:400,400i,700%7CMerriweather:400ii?subset=cyrillic' rel='stylesheet'>
-
-  <!-- Css -->
-  <link rel="stylesheet" href=" <?php echo get_stylesheet_directory_uri() ?>/assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href=" <?php echo get_stylesheet_directory_uri() ?>/assets/css/font-icons.css" />
-  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/assets/css/sliders.css" />
-  <link rel="stylesheet" href=" <?php echo get_stylesheet_directory_uri() ?>/assets/css/style.css" />
-  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/assets/css/responsive.css" />
-  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/assets/css/spacings.css" />
-  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/assets/css/animate.min.css" />
-
   <?php wp_head() ?>;
 
 </head>
