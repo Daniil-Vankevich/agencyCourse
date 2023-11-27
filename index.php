@@ -490,13 +490,8 @@
     </div> <!-- end content wrapper -->
   </div> <!-- end main wrapper -->
 
-  <!-- jQuery Scripts -->
-  <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/jquery.min.js"></script>
-  <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/plugins.js"></script>
-  <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/scripts.js"></script>
-
-  <?php wp_footer() ?>;
+  
+<?php wp_footer() ?>;
 
 </body>
 
