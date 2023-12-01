@@ -1025,9 +1025,9 @@ blockquote > span {
 }
 
 .navbar-nav > li > a:hover,
-.navbar-nav > .active > a,
-.navbar-nav > .active > a:focus,
-.navbar-nav > .active > a:hover {
+.navbar-nav > .current-menu-item > a,
+.navbar-nav > .current-menu-item > a:focus,
+.navbar-nav > .current-menu-item > a:hover {
   color: #c0945c !important;
 }
 

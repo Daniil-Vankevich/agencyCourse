@@ -71,41 +71,67 @@
               <div class="col-md-12 nav-wrap">
                 <div class="collapse navbar-collapse text-center" id="navbar-collapse">
 
-                  <ul class="nav navbar-nav">
+                  <?php
+                  //   <ul class="nav navbar-nav">
 
-                    <li class="active">
-                      <a href="index.html">Главная</a>
-                    </li>
+                  //   <li class="active">
+                  //     <a href="index.html">Главная</a>
+                  //   </li>
 
-                    <li class="dropdown">
-                      <a href="index.html">Блог</a>
-                      <ul class="dropdown-menu">
-                        <li><a href="category.html">Лайфстайл</a></li>
-                        <li><a href="category.html">Трэвел</a></li>
-                        <li><a href="category.html">Бьюти</a></li>
-                        <li><a href="category.html">Ворк хард</a></li>
-                        <li><a href="category.html">Еда</a></li>
-                      </ul>
-                    </li>
+                  //   <li class="dropdown">
+                  //     <a href="index.html">Блог</a>
+                  //     <ul class="dropdown-menu">
+                  //       <li><a href="category.html">Лайфстайл</a></li>
+                  //       <li><a href="category.html">Трэвел</a></li>
+                  //       <li><a href="category.html">Бьюти</a></li>
+                  //       <li><a href="category.html">Ворк хард</a></li>
+                  //       <li><a href="category.html">Еда</a></li>
+                  //     </ul>
+                  //   </li>
 
-                    <li>
-                      <a href="about.html">Обо мне</a>
-                    </li>
+                  //   <li>
+                  //     <a href="about.html">Обо мне</a>
+                  //   </li>
 
-                    <li>
-                      <a href="contact.html">Контакты</a>
-                    </li>
+                  //   <li>
+                  //     <a href="contact.html">Контакты</a>
+                  //   </li>
 
-                    <li id="mobile-search" class="hidden-lg hidden-md">
-                      <form method="get" class="mobile-search">
-                        <input type="search" class="form-control" placeholder="Search...">
-                        <button type="submit" class="search-button">
-                          <i class="icon icon_search"></i>
-                        </button>
-                      </form>
-                    </li>
+                  //   <li id="mobile-search" class="hidden-lg hidden-md">
+                  //     <form method="get" class="mobile-search">
+                  //       <input type="search" class="form-control" placeholder="Search...">
+                  //       <button type="submit" class="search-button">
+                  //         <i class="icon icon_search"></i>
+                  //       </button>
+                  //     </form>
+                  //   </li>
 
-                  </ul> <!-- end menu -->
+                  // </ul>
+                  ?>
+
+
+                  <!-- end menu -->
+
+                  <?php
+                  if (has_nav_menu('head_menu')) {
+                    $mobile_search = '<li id="mobile-search" class="hidden-lg hidden-md">
+                    <form method="get" class="mobile-search">
+                      <input type="search" class="form-control" placeholder="Search...">
+                      <button type="submit" class="search-button">
+                        <i class="icon icon_search"></i>
+                      </button>
+                    </form>
+                  </li> ';
+                    wp_nav_menu(array(
+                    'theme_location' => 'head_menu',
+                    'container' => false,
+                    'menu_class' => 'nav navbar-nav',
+                    'items_wrap' => '<ul class="%2$s">%3$s' . $mobile_search . '</ul>',
+                    'depth' => 2,
+                    'walker' => new Vankone_Nav(),
+                    ));
+                  }
+                  ?>
                 </div> <!-- end collapse -->
               </div> <!-- end col -->
 
@@ -490,8 +516,8 @@
     </div> <!-- end content wrapper -->
   </div> <!-- end main wrapper -->
 
-  
-<?php wp_footer() ?>;
+
+  <?php wp_footer() ?>;
 
 </body>
 
