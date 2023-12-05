@@ -26,7 +26,7 @@
               <article class="entry-item">
                 <div class="entry-img">
                   <a href="blog-single.html">
-                    <img src="img/post_1.jpg" alt="">
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/post_1.jpg" alt="">
                   </a>
                 </div>
                 <div class="entry-header">
@@ -60,7 +60,7 @@
               <article class="entry-item">
                 <div class="entry-img">
                   <a href="blog-single.html">
-                    <img src="img/post_2.jpg" alt="">
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/post_2.jpg" alt="">
                   </a>
                 </div>
                 <div class="entry-header">
@@ -94,7 +94,7 @@
               <article class="entry-item">
                 <div class="entry-img">
                   <a href="blog-single.html">
-                    <img src="img/post_3.jpg" alt="">
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/post_3.jpg" alt="">
                   </a>
                 </div>
                 <div class="entry-header">
@@ -128,7 +128,7 @@
               <article class="entry-item">
                 <div class="entry-img">
                   <a href="blog-single.html">
-                    <img src="img/post_4.jpg" alt="">
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/post_4.jpg" alt="">
                   </a>
                 </div>
                 <div class="entry-header">

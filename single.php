@@ -1,4 +1,6 @@
-<?php get_header() ?>
+<?php get_header();
+the_post();
+?>
 
 <div class="content-wrapper oh">
 
@@ -14,12 +16,13 @@
           <article class="entry-item large-post">
 
             <div class="entry-header">
-              <a href="#" class="entry-category">Лайфстайл</a>
-              <h1 class="entry-title">Зимовка на Бали</h1>
+              <div class="entry-category"> <?php the_category(', '); ?></div>
+              <h1 class="entry-title"><?php the_title(); ?></h1>
             </div>
 
             <div class="entry-img">
-              <img src="img/featured_post.jpg" alt="">
+              <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/featured_post.jpg" alt="">
+
             </div>
 
             <div class="entry-wrap">
@@ -27,55 +30,20 @@
 
                 <div class="entry-content">
                   <div class="article">
-                    <p><span class="dropcap style-1">L</span>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque ornare aenean euismod elementum nisi. Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque sit. Consectetur lorem donec massa sapien faucibus et molestie ac.</p>
 
-                    <blockquote>
-                      <p>
-                        Всё, что мы есть – это результат наших мыслей.
-                      </p>
-                      <span>Будда</span>
-                    </blockquote>
+                    <?php the_content(); ?>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque ornare aenean euismod elementum nisi. Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque sit. Consectetur lorem donec massa sapien faucibus et molestie ac.</p>
-
-                    <h2>Заголовок H2</h2>
-                    <h3>Заголовок H3</h3>
-                    <h4>Заголовок H4</h4>
-                    <h5>Заголовок H5</h5>
-
-                    <p>Маркированный список</p>
-
-                    <ul>
-                      <li>Элемент списка 1</li>
-                      <li>Элемент списка 2</li>
-                      <li>Элемент списка 3</li>
-                      <li>Элемент списка 4</li>
-                    </ul>
-
-                    <p>Нумерованный список</p>
-
-                    <ol>
-                      <li>Элемент списка 1</li>
-                      <li>Элемент списка 2</li>
-                      <li>Элемент списка 3</li>
-                      <li>Элемент списка 4</li>
-                    </ol>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque ornare aenean euismod elementum nisi. Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque sit. Consectetur lorem donec massa sapien faucibus et molestie ac.</p>
                   </div>
 
                   <!-- tags -->
                   <div class="entry-tags tags mb-50 mt-40 clearfix">
-                    <a href="#">Стрит</a>
-                    <a href="#">Адаптив</a>
-                    <a href="#">Интернет-коммерация</a>
-                    <a href="#">Влог</a>
+                    <?php the_tags('', ''); ?>
                   </div>
 
                   <div class="entry-meta-wrap clearfix">
                     <ul class="entry-meta">
                       <li class="entry-date">
-                        <a href="#">20 января 2020</a>
+                        <?php the_time(' j F Y H:i '); ?>
                       </li>
                       <li class="entry-comments">
                         <a href="blog-single.html">2 комментария</a>
@@ -86,7 +54,8 @@
 
                   <!-- entry author -->
                   <div class="entry-author-box clearfix">
-                    <img src="img/author.jpg" class="author-img" alt="img">
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/author.jpg" alt="">
+
                     <div class="author-info">
                       <h6 class="author-name"><a href="#">Настя Найс</a></h6>
                       <p class="mb-0">Была в около 300 странах, путешествие – это её страсть. Ну и конечно ведёт свой влог на YouTube.
@@ -110,7 +79,8 @@
                         <article class="entry-item">
                           <div class="entry-img">
                             <a href="blog-single.html">
-                              <img src="img/post_1.jpg" alt="">
+                              <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/post_1.jpg" alt="">
+
                             </a>
                           </div>
                           <h4 class="entry-title">
@@ -130,7 +100,8 @@
                         <article class="entry-item">
                           <div class="entry-img">
                             <a href="blog-single.html">
-                              <img src="img/post_2.jpg" alt="">
+                              <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/post_2.jpg" alt="">
+
                             </a>
                           </div>
                           <h4 class="entry-title">
@@ -149,7 +120,7 @@
                         <article class="entry-item">
                           <div class="entry-img">
                             <a href="blog-single.html">
-                              <img src="img/post_3.jpg" alt="">
+                              <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/post_3.jpg" alt="">
                             </a>
                           </div>
                           <h4 class="entry-title">
@@ -176,7 +147,8 @@
                     <ul class="comment-list">
                       <li>
                         <div class="comment-body">
-                          <img src="img/comment_1.jpg" class="comment-avatar" alt="">
+                          <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/comment_1.jpg" alt="">
+
                           <div class="comment-content">
                             <span class="comment-author">Александр</span>
                             <span class="comment-date">20 января 2020 в 20:20</span>
@@ -188,7 +160,7 @@
                         <ul class="comment-reply">
                           <li>
                             <div class="comment-body">
-                              <img src="img/comment_2.jpg" class="comment-avatar" alt="">
+                              <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/comment_2.jpg" alt="">
                               <div class="comment-content">
                                 <span class="comment-author">Настя</span>
                                 <span class="comment-date">20 января 2020 в 20:20</span>
@@ -203,7 +175,7 @@
 
                       <li>
                         <div class="comment-body">
-                          <img src="img/comment_3.jpg" class="comment-avatar" alt="">
+                          <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/comment_3.jpg" alt="">
                           <div class="comment-content">
                             <span class="comment-author">Миша</span>
                             <span class="comment-date">20 января 2020 в 20:20</span>
