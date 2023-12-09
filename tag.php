@@ -14,8 +14,8 @@
 
           <!-- category description -->
           <div class="category-description">
-            <h1><?php single_cat_title(); ?> </h1>
-            <?php echo category_description(); ?>
+            <h1><?php single_tag_title(); ?> </h1>
+            <?php echo tag_description(); ?>
           </div>
 
           <?php if (have_posts()) : ?>
@@ -32,7 +32,7 @@
 
             </div> <!-- end grid posts -->
           <?php else : ?>
-            <p>В этой рубрике пусто.....</p>
+            <p>Под этой меткой нет постов</p>
           <?php endif; ?>
 
           <div class="row mt-20">
