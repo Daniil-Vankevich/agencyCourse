@@ -15,14 +15,14 @@
           <article class="entry-item large-post">
 
             <div class="entry-header">
-              <a href="#" class="entry-category">Лайфстайл</a>
+              <a href="#" class="entry-category"><?php the_category(', '); ?></a>
               <h2 class="entry-title">
-                <a href="blog-single.html">Зимовка на Бали</a>
+                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
               </h2>
             </div>
 
             <div class="entry-img">
-              <a href="blog-single.html">
+              <a href="<?php the_permalink(); ?>">
                 <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/featured_post.jpg" alt="">
               </a>
             </div>
@@ -31,10 +31,9 @@
               <div class="entry">
 
                 <div class="entry-content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet nec ullamcorper sit amet risus. Posuere lorem ipsum dolor sit amet consectetur adipiscing. Diam sit amet nisl suscipit adipiscing bibendum est...
-                  </p>
+                  <?php the_content(); ?>
                   <div class="text-center">
-                    <a href="blog-single.html" class="read-more underline-link">Читать далее</a>
+                    <a href="" <?php the_permalink(); ?>" class="read-more underline-link">Читать далее</a>
                   </div>
                 </div>
 
@@ -57,141 +56,24 @@
 
           <!-- grid posts -->
           <div class="row items-grid">
-            <div class="col-sm-6">
-              <article class="entry-item">
-                <div class="entry-img">
-                  <a href="blog-single.html">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/post_1.jpg" alt="">
-                  </a>
-                </div>
-                <div class="entry-header">
-                  <a href="#" class="entry-category">Лайфстайл</a>
-                  <h2 class="entry-title">
-                    <a href="blog-single.html">Как просыпаться в 5 утра?</a>
-                  </h2>
-                </div>
-                <div class="entry-wrap">
-                  <div class="entry">
-                    <div class="entry-content">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac odio tempor orci dapibus ultrices in iaculis nunc sed. Eu augue ut lectus arcu bibendum...
-                      </p>
-                    </div>
-                    <div class="entry-meta-wrap clearfix">
-                      <ul class="entry-meta">
-                        <li class="entry-date">
-                          <a href="#">1 января 2020</a>
-                        </li>
-                        <li class="entry-comments">
-                          <a href="blog-single.html">5 комментариев</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </div>
 
-            <div class="col-sm-6">
-              <article class="entry-item">
-                <div class="entry-img">
-                  <a href="blog-single.html">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/post_2.jpg" alt="">
-                  </a>
-                </div>
-                <div class="entry-header">
-                  <a href="#" class="entry-category">Трэвел</a>
-                  <h2 class="entry-title">
-                    <a href="blog-single.html">Поездка в Гималаи</a>
-                  </h2>
-                </div>
-                <div class="entry-wrap">
-                  <div class="entry">
-                    <div class="entry-content">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac odio tempor orci dapibus ultrices in iaculis nunc sed. Eu augue ut lectus arcu bibendum...
-                      </p>
-                    </div>
-                    <div class="entry-meta-wrap clearfix">
-                      <ul class="entry-meta">
-                        <li class="entry-date">
-                          <a href="#">1 января 2020</a>
-                        </li>
-                        <li class="entry-comments">
-                          <a href="blog-single.html">5 комментариев</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </div>
+            <?php if (have_posts()) : ?>
+              <!-- grid posts -->
+              <div class="row items-grid">
 
-            <div class="col-sm-6">
-              <article class="entry-item">
-                <div class="entry-img">
-                  <a href="blog-single.html">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/post_3.jpg" alt="">
-                  </a>
-                </div>
-                <div class="entry-header">
-                  <a href="#" class="entry-category">Трэвел</a>
-                  <h2 class="entry-title">
-                    <a href="blog-single.html">Серфить в Португалии или фрирайдить на Красной Поляне?</a>
-                  </h2>
-                </div>
-                <div class="entry-wrap">
-                  <div class="entry">
-                    <div class="entry-content">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac odio tempor orci dapibus ultrices in iaculis nunc sed. Eu augue ut lectus arcu bibendum...
-                      </p>
-                    </div>
-                    <div class="entry-meta-wrap clearfix">
-                      <ul class="entry-meta">
-                        <li class="entry-date">
-                          <a href="#">1 января 2020</a>
-                        </li>
-                        <li class="entry-comments">
-                          <a href="blog-single.html">5 комментариев</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </div>
+                <?php while (have_posts()) : the_post(); ?>
 
-            <div class="col-sm-6">
-              <article class="entry-item">
-                <div class="entry-img">
-                  <a href="blog-single.html">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/post_4.jpg" alt="">
-                  </a>
-                </div>
-                <div class="entry-header">
-                  <a href="#" class="entry-category">Лайфстайл</a>
-                  <h2 class="entry-title">
-                    <a href="blog-single.html">Привет, мир!</a>
-                  </h2>
-                </div>
-                <div class="entry-wrap">
-                  <div class="entry">
-                    <div class="entry-content">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac odio tempor orci dapibus ultrices in iaculis nunc sed. Eu augue ut lectus arcu bibendum...
-                      </p>
-                    </div>
-                    <div class="entry-meta-wrap clearfix">
-                      <ul class="entry-meta">
-                        <li class="entry-date">
-                          <a href="#">1 января 2020</a>
-                        </li>
-                        <li class="entry-comments">
-                          <a href="blog-single.html">5 комментариев</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </div>
+                  <?php get_template_part('entry'); ?>
+
+                <?php endwhile; ?>
+
+
+
+              </div> <!-- end grid posts -->
+            <?php else : ?>
+              <p>В этой рубрике пусто.....</p>
+            <?php endif; ?>
+
 
 
           </div> <!-- end grid posts -->
