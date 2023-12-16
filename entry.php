@@ -1,4 +1,4 @@
-<div class="col-sm-6">
+<div <?php post_class('col-sm-6') ?>>
 	<article class="entry-item">
 		<div class="entry-img">
 			<a href="blog-single.html">

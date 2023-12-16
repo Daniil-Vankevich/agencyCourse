@@ -12,88 +12,84 @@
         <div class="col-md-9 post-content mb-50">
 
           <!-- large post -->
-          <article class="entry-item large-post">
+          <?php if (have_posts()) : ?>
 
-            <div class="entry-header">
-              <a href="#" class="entry-category"><?php the_category(', '); ?></a>
-              <h2 class="entry-title">
-                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-              </h2>
-            </div>
+            <?php
+            $count = 1;
 
-            <div class="entry-img">
-              <a href="<?php the_permalink(); ?>">
-                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/featured_post.jpg" alt="">
-              </a>
-            </div>
+            while (have_posts()) : the_post();
 
-            <div class="entry-wrap">
-              <div class="entry">
+              if (is_sticky()) {
+                get_template_part('entry', 'large');
+              } else {
+                if ($count == 1) {
+                  echo '<div class = "row items-grid">';
+                }
+                get_template_part('entry');
+                $count++;
+              }
 
-                <div class="entry-content">
-                  <?php the_content(); ?>
-                  <div class="text-center">
-                    <a href="" <?php the_permalink(); ?>" class="read-more underline-link">Читать далее</a>
-                  </div>
-                </div>
+            // if( $count == 1 ) {
+            // 	get_template_part( 'entry', 'large' );
+            // 	echo '<div class="row items-grid">';
+            // } else {
+            // 	get_template_part( 'entry' );
+            // }
+            //
+            // $count++;
 
-                <div class="entry-meta-wrap clearfix">
-                  <ul class="entry-meta">
-                    <li class="entry-date">
-                      <a href="#">1 января 2020</a>
-                    </li>
-                    <li class="entry-comments">
-                      <a href="blog-single.html">5 комментариев</a>
-                    </li>
-                  </ul>
+            endwhile;
+            if ($count > 1) {
+              echo '</div>';
+            }
+            ?>
+            <!-- 
+            <div class="row mt-20">
+              <div class="col-md-12 text-center pagination">
+                <a href="#" class=""><i class="icon arrow_carrot-left"></i></a>
+                <a href="#" class="">2</a>
+                <a href="#" class="">3</a>
+                <a href="#" class="">4</a>
+                <span class="current">5</span>
+                <span>...</span>
+                <a href="#" class="">4</a>
+                <a href="#" class=""><i class="icon arrow_carrot-right"></i></a>
+              </div>
+            </div> -->
 
 
-                </div>
+            <div class="row mt-20">
+              <div class="col-md-12 text-center pagination">
+                <?php
+                $current_page = !empty($_GET['misha']) ? $_GET['misha'] : 1;
+                $query = new WP_Query(array(
+                  'posts_per_page' => 2,
+                  'paged' => $current_page, // передаём текущую страницу сюда!
+                ));
 
+                while ($query->have_posts()) : $query->the_post();
+
+                  echo '<h2>' . get_the_title() . '</h2>'; // выведем чисто заголовки для примера
+
+                endwhile;
+                echo paginate_links(array(
+                  'base' => site_url() . '%_%',
+                  'format' => '?misha=%#%',
+                  'total' => $query->max_num_pages,
+                  'current' => $current_page,
+                ));
+
+                wp_reset_postdata();
+                ?>
               </div>
             </div>
-          </article> <!-- end large post -->
 
-          <!-- grid posts -->
-          <div class="row items-grid">
-
-            <?php if (have_posts()) : ?>
-              <!-- grid posts -->
-              <div class="row items-grid">
-
-                <?php while (have_posts()) : the_post(); ?>
-
-                  <?php get_template_part('entry'); ?>
-
-                <?php endwhile; ?>
-
-
-
-              </div> <!-- end grid posts -->
-            <?php else : ?>
-              <p>В этой рубрике пусто.....</p>
-            <?php endif; ?>
-
-
-
-          </div> <!-- end grid posts -->
-
-          <div class="row mt-20">
-            <div class="col-md-12 text-center pagination">
-              <a href="#" class=""><i class="icon arrow_carrot-left"></i></a>
-              <a href="#" class="">2</a>
-              <a href="#" class="">3</a>
-              <a href="#" class="">4</a>
-              <span class="current">5</span>
-              <span>...</span>
-              <a href="#" class="">4</a>
-              <a href="#" class=""><i class="icon arrow_carrot-right"></i></a>
-
-            </div>
-          </div>
+          <?php endif; ?>
 
 
         </div> <!-- end col -->
+
+
         <?php get_sidebar(); ?>
 
       </div> <!-- end row -->
